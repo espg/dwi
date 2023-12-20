@@ -1,8 +1,12 @@
-name: sodalock
+# Note: this environment will be merged with the pangeo-notebook/environment.yml
+# by conda-lock. Only put things here that are not already in pangeo-notebook
+name: pangeo
 channels:
-  - conda-forge
+ - conda-forge
+ - nodefaults
 dependencies:
-  - python=3.11.4
-  - conda-lock=2.3
-  - conda>=23.3.0
-  - mamba=1
+ - jupyterlab-nvdashboard
+ - gpytorch
+ - pytorch>=2.0.0=*cuda118*
+ - torchvision>=0.15.1=*cuda118*
+ - torchgeo
