@@ -1,0 +1,3 @@
+cupy
+pytorch_lightning
+yolox_backbone
