@@ -23,7 +23,9 @@ mirror the environment.
 When adding or updating dependencies, first edit the environment.yml file,
 then run:
 
-```conda-lock -f environment.yml -f NBenvironment.yml -p linux-64```
+```
+conda-lock -f environment.yml -f NBenvironment.yml -p linux-64
+```
 
 This will create `conda-lock.yml` ; note that the [NBevironment.yml](https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/environment.yml) file may need
 to be manually updated from time to time, as it is not automatically tracked.
@@ -37,22 +39,28 @@ The created `conda-lock.yml` file can be used to re-create an environment using
 conda-lock, but not all systems have conda-lock. The following command will
 create a `conda-linux-64.lock` that can be used with a plain conda install:
 
-```conda-lock -f NBenvironment.yml -f environment.yml -p linux-64 -k explicit --filename-template "conda-linux-64.lock"```
+```
+conda-lock -f NBenvironment.yml -f environment.yml -p linux-64 -k explicit --filename-template "conda-linux-64.lock"
+```
 
 To build locally, upload the `conda-linux-64.lock` file and run:
 
-```conda create -n MyEnv --file conda-linux-64.lock```
+```
+conda create -n MyEnv --file conda-linux-64.lock
+```
 
 ...setting MyEnv to whatever name you prefer. Once the build is complete, add
 to the local notebook kernel with:
 
-```python -m ipykernel install --user --name=MyEnv```
+```
+python -m ipykernel install --user --name=MyEnv
+```
 
 ### To do
 
- [ ] Kernel install isn't persistant using above instructions
- [ ] Auto-updaing the NBenvironment.yml file could probably be automated as a
+- [ ] Kernel install isn't persistant using above instructions
+- [ ] Auto-updaing the NBenvironment.yml file could probably be automated as a
 github action.
- [ ] Same with running conda-lock commands (this is what pangeo does!)
- [ ] Add links and references
+- [ ] Same with running conda-lock commands (this is what pangeo does!)
+- [ ] Add links and references
 
