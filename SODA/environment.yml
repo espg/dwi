@@ -5,15 +5,16 @@ channels:
  - conda-forge
  - nodefaults
 dependencies:
- - python=3.11
+ - python==3.11.7
  - pangeo-notebook==2023.12.17
  - jupyterlab-nvdashboard
  - gpytorch
  - pytorch==2.1.0=*cuda118*
  - torchvision>=0.15.1=*cuda118*
  - torchgeo
- - onnxruntime==1.16.3
- - onnx==1.15.0
+ - onnxruntime #==1.16.3
+ - onnxruntime-gpu
+ - onnx #==1.15.0
  - planetary-computer
  # Specific for distribute client / server compat
  - tornado #==6.3.2
