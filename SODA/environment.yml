@@ -13,7 +13,6 @@ dependencies:
  - torchvision>=0.15.1=*cuda118*
  - torchgeo
  - onnxruntime #==1.16.3
- - onnxruntime-gpu
  - onnx #==1.15.0
  - planetary-computer
  # Specific for distribute client / server compat
@@ -21,4 +20,5 @@ dependencies:
  - cloudpickle #==2.2.1
 #- msgpack==1.0.5
  - gdown
- - pip
+ - pip:
+   - onnxruntime-gpu
