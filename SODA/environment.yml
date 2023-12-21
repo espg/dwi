@@ -12,13 +12,21 @@ dependencies:
  - pytorch==2.1.0=*cuda118*
  - torchvision>=0.15.1=*cuda118*
  - torchgeo
+ # Inference deps
  - onnxruntime #==1.16.3
  - onnx #==1.15.0
  - planetary-computer
  # Specific for distribute client / server compat
  - tornado #==6.3.2
  - cloudpickle #==2.2.1
+ - cryptography>=41.0.6 # get quay to stop complaining
 #- msgpack==1.0.5
  - gdown
+ # Training deps
+ - mmcv
+ - cupy
+ - mmdet
  - pip:
    - onnxruntime-gpu
+   - yolox_backbone
+   - cucim
